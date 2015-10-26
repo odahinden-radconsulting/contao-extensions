@@ -1,5 +1,5 @@
 {
-  "name": "odahinden-radconsulting/contao-extensions/rad-bootstrap",
+  "name": "odahinden-radconsulting/contao-extensions-bootstrap",
   "type": "library",
   "description": "Contao Open Source CMS",
   "license": "LGPL-3.0+",
@@ -16,7 +16,7 @@
   "extra":{
     "contao": {
       "sources":{
-        "module": "system/modules/rad-bootstrap"
+        "module": "system/modules/contao-extensions-bootstrap"
       }
     },
     "branch-alias": {
