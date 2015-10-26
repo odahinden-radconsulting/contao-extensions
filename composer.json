@@ -16,5 +16,7 @@
     "php":">=5.3",
     "contao/core":">3.5,<=3.5.4"
   },
-  "target-dir": "../../system/modules/"
+  "config": {
+    "vendor-dir": "system/modules/"
+  }
 }
