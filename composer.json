@@ -16,9 +16,6 @@
     "php":">=5.3",
     "contao/core":">3.5,<=3.5.4"
   },
-  "config": {
-    "vendor-dir": "system/modules/"
-  },
   "extra": {
     "installer-paths": {
       "system/modules/contao-extensions-bootstrap": ["contao-extensions-bootstrap"]
