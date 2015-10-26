@@ -18,5 +18,10 @@
   },
   "config": {
     "vendor-dir": "system/modules/"
-}
+  },
+  "extra": {
+    "installer-paths": {
+      "system/modules/contao-extensions-bootstrap": "contao-extension-bootstrap"
+    }
+  }
 }
