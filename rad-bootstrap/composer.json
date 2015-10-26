@@ -1,0 +1,12 @@
+{
+  "name": "odahinden-radconsulting/contao-extensions",
+  "type": "library",
+  "description": "Contao Open Source CMS",
+  "license": "LGPL-3.0+",
+  "authors": [
+    {
+      "name": "RAD Consulting GmbH",
+      "homepage": "http://www.rad-consulting.ch"
+    }
+  ]
+}
