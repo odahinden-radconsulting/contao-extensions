@@ -19,7 +19,7 @@
   "extra":{
     "contao": {
       "sources":{
-        "module": "system/modules/contao-extensions-bootstrap"
+        "": "system/modules/contao-extensions-bootstrap"
       }
     }
   }
