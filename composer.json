@@ -16,9 +16,11 @@
     "php":">=5.3",
     "contao/core":">3.5,<=3.5.4"
   },
-  "scripts": {
-    "post-install-cmd": [
-      "mklink /J vendor/contao-extensions-bootstrap ../system/modules/contao-extensions-bootstrap"
-    ]
+  "extra":{
+    "contao": {
+      "sources":{
+        "module": "system/modules/contao-extensions-bootstrap"
+      }
+    }
   }
 }
