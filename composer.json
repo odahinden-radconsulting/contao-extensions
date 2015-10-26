@@ -21,7 +21,7 @@
   },
   "extra": {
     "installer-paths": {
-      "system/modules/contao-extensions-bootstrap": "contao-extension-bootstrap"
+      "system/modules/contao-extensions-bootstrap": ["contao-extensions-bootstrap"]
     }
   }
 }
