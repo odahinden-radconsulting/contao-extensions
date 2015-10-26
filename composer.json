@@ -1,15 +1,17 @@
 {
   "name": "odahinden-radconsulting/contao-extensions-bootstrap",
-  "type": "library",
+  "type": "contao-module",
   "description": "Contao Open Source CMS",
   "license": "LGPL-3.0+",
-  "version": "0.1",
+  "version": "1.0",
+  "homepage": "http://www.rad-consulting.ch",
   "authors": [
     {
       "name": "RAD Consulting GmbH",
       "homepage": "http://www.rad-consulting.ch"
     }
   ],
+  "prefer-stable": true,
   "require": {
     "php":">=5.3",
     "contao/core":">3.0,<=3.5.4"
