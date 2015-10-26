@@ -18,7 +18,8 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "test -d vendor/contao-extensions-bootstrap && ln -s ../system/modules/contao-extensions-bootstrap"
+      "test -d vendor/contao-extensions-bootstrap && ln -s ../system/modules/contao-extensions-bootstrap",
+      "mklink /J vendor/contao-extensions-bootstrap ../system/modules/contao-extensions-bootstrap"
     ]
   }
 }
