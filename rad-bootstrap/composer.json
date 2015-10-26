@@ -8,5 +8,19 @@
       "name": "RAD Consulting GmbH",
       "homepage": "http://www.rad-consulting.ch"
     }
-  ]
+  ],
+  "require": {
+    "php":">=5.3",
+    "contao/core":">3.0,<=3.5.4"
+  },
+  "extra":{
+    "contao": {
+      "sources":{
+        "module": "system/modules/rad-bootstrap"
+      }
+    },
+    "branch-alias": {
+      "dev-master": "master"
+    }
+  }
 }
