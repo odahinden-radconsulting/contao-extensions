@@ -1,5 +1,5 @@
 {
-  "name": "radconsulting/contao-extensions-bootstrap",
+  "name": "contao-extensions-bootstrap",
   "type": "contao-module",
   "description": "Contao Open Source CMS",
   "license": "LGPL-3.0+",
@@ -16,5 +16,5 @@
     "php":">=5.3",
     "contao/core":">3.5,<=3.5.4"
   },
-  "target-dir": "system/modules/contao-extensions-bootstrap"
+  "target-dir": "../../system/modules/"
 }
