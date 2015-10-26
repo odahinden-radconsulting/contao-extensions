@@ -16,11 +16,5 @@
     "php":">=5.3",
     "contao/core":">3.5,<=3.5.4"
   },
-  "extra":{
-    "contao": {
-      "sources": {
-        "module": "system/modules/contao-extensions-bootstrap"
-      }
-    }
-  }
+  "target-dir": "system/modules/contao-extensions-bootstrap"
 }
