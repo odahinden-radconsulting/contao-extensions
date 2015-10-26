@@ -3,6 +3,7 @@
   "type": "library",
   "description": "Contao Open Source CMS",
   "license": "LGPL-3.0+",
+  "version": "0.1",
   "authors": [
     {
       "name": "RAD Consulting GmbH",
