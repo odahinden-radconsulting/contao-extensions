@@ -16,12 +16,9 @@
   },
   "extra":{
     "contao": {
-      "sources":{
+      "sources": {
         "module": "system/modules/contao-extensions-bootstrap"
       }
-    },
-    "branch-alias": {
-      "dev-master": "master"
     }
   }
 }
