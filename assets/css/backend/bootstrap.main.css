@@ -20,6 +20,7 @@
     -webkit-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
+    opacity: 1;
 }
 
 .css-device {
@@ -101,4 +102,5 @@
 }
 .offset-0 {
     margin-left: 0%;
+    opacity: 0;
 }
