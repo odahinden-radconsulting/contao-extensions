@@ -109,10 +109,10 @@ jQuery.noConflict();
                 var d = $('<div/>').html(data);
                 self.append(d);
                 d.insertContent();
-            });
 
-            $('select.bootstrap-select').bsColumn();
-            $('.bootstrap-offset select').bsOffset();
+                $('select.bootstrap-select').bsColumn();
+                $('.bootstrap-offset select').bsOffset();
+            });
         });
     };
 })(jQuery);
