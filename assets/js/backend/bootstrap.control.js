@@ -6,93 +6,13 @@ jQuery.noConflict();
 
 (function($){
 
-
-    $.fn.bsSelector = function() {
-
-        var type = $(document).find('#ctrl_type option:selected').val();
-
-        switch (type) {
-            case 'text':
-
-                break;
-            default:
-                console.log("Type not supported. Showing default devices");
-        }
-
-        return $.each(this, function(){
-            var self = $(this);
-
-            var id = self.attr('id').replace('ctrl_', '').replace('column', 'container');
-            var container = $('<div/>', {
-                class: 'bootstrap-flow-container',
-                id: id
-            });
-
-            var size = self.val();
-            $(self).bsColumBuilder(container, size);
-        });
-    };
-
-
-
-
-
-    $.fn.bsColumBuilder = function(container, size) {
-        container.insertAfter(this);
-        createColumns(container, size);
-        return $.each(this, function() {
-            $(this).on({
-                change: function(e) {
-                    createColumns(container, $(this).val());
-                }
-            });
-        });
-
-        function buildString() {
-            if (0 == $.bootstrap.dataElements.length) {
-                return  '<h3>' + $.bootstrap.defaultHeadline + '</h3>'
-                    +   '<p>' + $.bootstrap.defaultText + '</p>';
-            }
-
-            return $.bootstrap.dataElements.join('');
-        }
-
-        function createColumns(container, size) {
-
-            var v = buildString();
-
-            var column = $('<div/>', {
-                class: 'bootstrap-col col-' + size,
-                html: v
-            });
-
-            container.html('');
-            container.append(column);
-        }
-    };
-
-    $.fn.bsOffset = function() {
-
-        return $.each(this, function() {
-            var self = $(this);
-            var id = self.attr('id').replace('ctrl_', '').replace('offset', 'container');
-
-            self.on('change', function() {
-                var size = $(this).val()
-                var column = $('#' + id).find('.bootstrap-col');
-
-                column.removeClass('offset-0 offset-1 offset-2 offset-3 offset-4 offset-5 offset-6 offset-7 offset-8 offset-9 offset-10 offset-11');
-                column.addClass('offset-' + size);
-            });
-
-        });
-    }
-
     $.bootstrap = {
         defaultHeadline: 'Hello World',
         defaultText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
         dataElements: [],
-        interactiveElements: ''
+        interactiveElements: '',
+        columnClass: 'col-12 col-11 col-10 col-9 col-8 col-7 col-6 col-5 col-4 col-3 col-2 col-1',
+        offsetClass: 'offset-11 offset-10 offset-9 offset-8 offset-7 offset-6 offset-5 offset-4 offset-3 offset-2 offset-1 offset-0'
     };
 
     $.fn.getTagName = function() {
@@ -137,10 +57,32 @@ jQuery.noConflict();
         $(this).find('.bootstrap-col').html(html);
     }
 
+    $.fn.bsColumn = function() {
+        return $.each(this, function() {
+            var self = this;
+            var container = self.closest('.tl_box');
+            $(this).on({
+                change: function(e) {
+                    container.find('.bootstrap-col').removeClass($.bootstrap.columnClass).addClass('col-' + $(this).val());
+                }
+            });
+        });
+    };
+
+    $.fn.bsOffset = function() {
+        return $.each(this, function() {
+            var self = this;
+            var container = self.closest('.tl_box');
+            $(this).on({
+                change: function(e) {
+                    container.find('.bootstrap-col').removeClass($.bootstrap.offsetClass).addClass('offset-' + $(this).val());
+                }
+            });
+        });
+    };
+
     $.fn.backendWidget = function(options) {
-
         var token = $('input[name="REQUEST_TOKEN"]').val();
-
 
         return $.each(this, function() {
 
@@ -157,13 +99,13 @@ jQuery.noConflict();
                 self.append(d);
                 d.insertContent();
             });
+
+            $('select.bootstrap-select').bsColumn();
+            $('.bootstrap-offset select').bsOffset();
         });
     };
 })(jQuery);
 
 jQuery(document).ready(function($){
-    /*$('select.bootstrap-select').bsSelector();
-    $('.bootstrap-offset select').bsOffset();*/
-
     $('[id*="pal_bootstrap_legend_"]').backendWidget(['']);
 });
