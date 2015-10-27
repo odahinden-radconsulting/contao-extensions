@@ -114,7 +114,7 @@ jQuery.noConflict();
         });
     };
 
-    $.fn.buildHtml = function() {
+    $.buildHtml = function() {
         if (0 == $.bootstrap.dataElements.length) {
             return  '<h3>' + $.bootstrap.defaultHeadline + '</h3>'
                 +   '<p>' + $.bootstrap.defaultText + '</p>';
