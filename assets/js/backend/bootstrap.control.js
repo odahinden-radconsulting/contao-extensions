@@ -5,21 +5,15 @@
 jQuery.noConflict();
 
 (function($){
-    $.bootstrap = {
-        defaultHeadline: 'Hello World',
-        defaultText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        dataElements: [],
-        interactiveElements: ''
-    };
+
 
     $.fn.bsSelector = function() {
 
         var type = $(document).find('#ctrl_type option:selected').val();
-        $.bootstrap.interactiveElements = $('#ctrl_headline, #ctrl_text');
 
         switch (type) {
             case 'text':
-                $.bootstrap.interactiveElements.dataCollector();
+
                 break;
             default:
                 console.log("Type not supported. Showing default devices");
@@ -39,24 +33,9 @@ jQuery.noConflict();
         });
     };
 
-    $.fn.dataCollector = function () {
-        $.bootstrap.dataElements = [];
-        return $.each(this, function() {
-            switch ($(this).getTagName()) {
-                case 'input':
-                    $.bootstrap.dataElements.push('<h3>' + $(this).val() + '</h3>');
-                    break;
 
-                case 'textarea':
-                    $.bootstrap.dataElements.push($(this).text());
-                    break;
-            }
-        });
-    };
 
-    $.fn.getTagName = function() {
-        return this.prop("tagName").toLowerCase();
-    };
+
 
     $.fn.bsColumBuilder = function(container, size) {
         container.insertAfter(this);
@@ -109,6 +88,47 @@ jQuery.noConflict();
         });
     }
 
+    $.bootstrap = {
+        defaultHeadline: 'Hello World',
+        defaultText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+        dataElements: [],
+        interactiveElements: ''
+    };
+
+    $.fn.getTagName = function() {
+        return this.prop("tagName").toLowerCase();
+    };
+
+    $.fn.dataCollector = function () {
+        $.bootstrap.dataElements = [];
+        return $.each(this, function() {
+            switch ($(this).getTagName()) {
+                case 'input':
+                    $.bootstrap.dataElements.push('<h3>' + $(this).val() + '</h3>');
+                    break;
+
+                case 'textarea':
+                    $.bootstrap.dataElements.push($(this).text());
+                    break;
+            }
+        });
+    };
+
+    $.fn.buildHtml = function() {
+        if (0 == $.bootstrap.dataElements.length) {
+            return  '<h3>' + $.bootstrap.defaultHeadline + '</h3>'
+                +   '<p>' + $.bootstrap.defaultText + '</p>';
+        }
+
+        return $.bootstrap.dataElements.join('');
+    }
+
+    $.fn.insertContent = function() {
+        $('#ctrl_headline, #ctrl_text').dataCollector();
+        var html = $.buildHtml();
+        $(this).find('.bootstrap-col').html(html);
+    }
+
     $.fn.backendWidget = function(options) {
 
         var token = $('input[name="REQUEST_TOKEN"]').val();
@@ -127,6 +147,7 @@ jQuery.noConflict();
             request.done(function(data){
                 var d = $('<div/>').html(data);
                 self.append(d);
+                d.insertContent();
             });
         });
     };

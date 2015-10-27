@@ -11,20 +11,20 @@
  * @copyright 2015
  */
 
-$GLOBALS['TL_LANG']['tl_content']['bootstrap_column_xs'] = array('Bootstrap Columns for extra small Devices 480px', 'Inteded for Mobile-Phones such as iPhone, Android Based Phones etc. Only works if "Bootstrap Active" is checked in Theme');
-$GLOBALS['TL_LANG']['tl_content']['bootstrap_column_sm'] = array('Bootstrap Columns for small Devices up to 768px', 'Intended for Tablets and low Resolution Laptop Screens. Only works if "Bootstrap Active" is checked in Theme');
-$GLOBALS['TL_LANG']['tl_content']['bootstrap_column_md'] = array('Bootstrap Columns for medium Devices up to 992px', 'Intended for Laptops and low Resolution Desktop Screens.  Only works if "Bootstrap Active" is checked in Theme');
-$GLOBALS['TL_LANG']['tl_content']['bootstrap_column_lg'] = array('Bootstrap Columns for large Devices up to 1200px', 'Intended for Desktop Screens or TVs. Only works if "Bootstrap Active" is checked in Theme');
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_column_xs'] = array('Bootstrap Columns up to 480px', 'Choose the width of your Element');
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_column_sm'] = array('Bootstrap Columns up to 768px', 'Choose the width of your Element');
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_column_md'] = array('Bootstrap Columns up to 992px', 'Choose the width of your Element');
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_column_lg'] = array('Bootstrap Columns up to 1200px', 'Choose the width of your Element');
 
-$GLOBALS['TL_LANG']['tl_content']['bootstrap_offset_xs'] = array('Bootstrap Offset for extra small Devices 480px', 'Inteded for Mobile-Phones such as iPhone, Android Based Phones etc. Only works if "Bootstrap Active" is checked in Theme');
-$GLOBALS['TL_LANG']['tl_content']['bootstrap_offset_sm'] = array('Bootstrap Offset for small Devices up to 768px', 'Intended for Tablets and low Resolution Laptop Screens. Only works if "Bootstrap Active" is checked in Theme');
-$GLOBALS['TL_LANG']['tl_content']['bootstrap_offset_md'] = array('Bootstrap Offset for medium Devices up to 992px', 'Intended for Laptops and low Resolution Desktop Screens.  Only works if "Bootstrap Active" is checked in Theme');
-$GLOBALS['TL_LANG']['tl_content']['bootstrap_offset_lg'] = array('Bootstrap Offset for large Devices up to 1200px', 'Intended for Desktop Screens or TVs. Only works if "Bootstrap Active" is checked in Theme');
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_offset_xs'] = array('Bootstrap Offset for extra small Devices 480px', 'Choose the margin of your Element');
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_offset_sm'] = array('Bootstrap Offset for small Devices up to 768px', 'Choose the margin of your Element');
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_offset_md'] = array('Bootstrap Offset for medium Devices up to 992px', 'Choose the margin of your Element');
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_offset_lg'] = array('Bootstrap Offset for large Devices up to 1200px', 'Choose the margin of your Element');
 
-$GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_lg'] = 'Bootstrap Columns for large Devices';
-$GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_md'] = 'Bootstrap Columns for medium Devices';
-$GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_sm'] = 'Bootstrap Columns for small Devices';
-$GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_xs'] = 'Bootstrap Columns for Mobilephones';
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_lg'] = 'Bootstrap Columns for large Devices such as TV or a high resolution Screen';
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_md'] = 'Bootstrap Columns for large Devices such as Laptop or a low resolution Screen';
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_sm'] = 'Bootstrap Columns for small Devices such as Tablets';
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_xs'] = 'Bootstrap Columns for extra small Devices such as Mobilephones';
 
 $GLOBALS['TL_LANG']['tl_content']['columns'][12] = '12 Columns';
 $GLOBALS['TL_LANG']['tl_content']['columns'][11] = '11 Columns';
