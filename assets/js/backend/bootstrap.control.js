@@ -60,7 +60,7 @@ jQuery.noConflict();
     $.fn.bsColumn = function() {
         return $.each(this, function() {
             var self = this;
-            var container = self.closest('.tl_box');
+            var container = $(self).closest('.tl_box');
             $(this).on({
                 change: function(e) {
                     container.find('.bootstrap-col').removeClass($.bootstrap.columnClass).addClass('col-' + $(this).val());
@@ -72,7 +72,7 @@ jQuery.noConflict();
     $.fn.bsOffset = function() {
         return $.each(this, function() {
             var self = this;
-            var container = self.closest('.tl_box');
+            var container = $(self).closest('.tl_box');
             $(this).on({
                 change: function(e) {
                     container.find('.bootstrap-col').removeClass($.bootstrap.offsetClass).addClass('offset-' + $(this).val());
