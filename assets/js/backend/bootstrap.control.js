@@ -126,6 +126,7 @@ jQuery.noConflict();
     $.fn.insertContent = function() {
         $('#ctrl_headline, #ctrl_text').dataCollector();
         var html = $.buildHtml();
+        console.log('yeah');
         console.log($(this));
         $(this).find('.bootstrap-col').html(html);
     }
