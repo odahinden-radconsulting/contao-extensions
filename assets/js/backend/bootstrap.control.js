@@ -66,7 +66,7 @@ jQuery.noConflict();
 
             $(this).on({
                 change: function(e) {
-                    $.setClasses(container, $(this).val(), $.bootstrap.columnClass);
+                    $.setClasses(container, $(this).val(), $.bootstrap.columnClass, 'col-');
                 }
             });
         });
@@ -81,14 +81,14 @@ jQuery.noConflict();
 
             $(this).on({
                 change: function(e) {
-                    $.setClasses(container, $(this).val(), $.bootstrap.offsetClass);
+                    $.setClasses(container, $(this).val(), $.bootstrap.offsetClass, 'offset-');
                 }
             });
         });
     };
 
-    $.setClasses = function(container, size, classes) {
-        container.find('.bootstrap-col').removeClass(classes).addClass('offset-' + size);
+    $.setClasses = function(container, size, classes, type) {
+        container.find('.bootstrap-col').removeClass(classes).addClass(type + size);
     };
 
     $.fn.backendWidget = function(options) {
