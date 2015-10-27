@@ -6,12 +6,16 @@
  * Time: 1:15 PM
  */
 
-$GLOBALS['TL_DCA']['tl_content']['palettes']['text'] .= ';{bootstrap_legend},' . tl_content_bootstrap::OFFSET_LG .
+$GLOBALS['TL_DCA']['tl_content']['palettes']['text'] .=                         ';{bootstrap_legend_lg}' .
+                                                                           ',' . tl_content_bootstrap::OFFSET_LG .
                                                                            ',' . tl_content_bootstrap::COLUMN_LG .
+                                                                           ';' . '{bootstrap_legend_md}' .
                                                                            ',' . tl_content_bootstrap::OFFSET_MD .
                                                                            ',' . tl_content_bootstrap::COLUMN_MD .
+                                                                           ';' . '{bootstrap_legend_sm}' .
                                                                            ',' . tl_content_bootstrap::OFFSET_SM .
                                                                            ',' . tl_content_bootstrap::COLUMN_SM .
+                                                                           ';' . '{bootstrap_legend_xs}' .
                                                                            ',' . tl_content_bootstrap::OFFSET_XS .
                                                                            ',' . tl_content_bootstrap::COLUMN_XS;
 

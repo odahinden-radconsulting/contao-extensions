@@ -21,7 +21,10 @@ $GLOBALS['TL_LANG']['tl_content']['bootstrap_offset_sm'] = array('Bootstrap Offs
 $GLOBALS['TL_LANG']['tl_content']['bootstrap_offset_md'] = array('Bootstrap Offset for medium Devices up to 992px', 'Intended for Laptops and low Resolution Desktop Screens.  Only works if "Bootstrap Active" is checked in Theme');
 $GLOBALS['TL_LANG']['tl_content']['bootstrap_offset_lg'] = array('Bootstrap Offset for large Devices up to 1200px', 'Intended for Desktop Screens or TVs. Only works if "Bootstrap Active" is checked in Theme');
 
-$GLOBALS['TL_LANG']['tl_content']['bootstrap_legend'] = 'Bootstrap Columns';
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_lg'] = 'Bootstrap Columns for large Devices';
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_md'] = 'Bootstrap Columns for medium Devices';
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_sm'] = 'Bootstrap Columns for small Devices';
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_xs'] = 'Bootstrap Columns for Mobilephones';
 
 $GLOBALS['TL_LANG']['tl_content']['columns'][12] = '12 Columns';
 $GLOBALS['TL_LANG']['tl_content']['columns'][11] = '11 Columns';
