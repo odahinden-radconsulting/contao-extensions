@@ -33,7 +33,7 @@ class SelectBootstrapMenu extends SelectMenu
     public function generate()
     {
         $arrOptions = array();
-        $strClass = 'tl_select';
+        $strClass = 'tl_select bootstrap-select';
 
         if ($this->multiple)
         {
@@ -85,11 +85,10 @@ class SelectBootstrapMenu extends SelectMenu
         // Chosen
         if ($this->chosen)
         {
-            $strClass .= ' tl_chosen';
+            $strClass .= ' tl_chosen bootstrap-select';
         }
 
-        $imageContainer = '<script type="text/javascript">function bootstrapPreviewChange(e) { var value = "default"; if(0 != e.value) {value = e.value;} document.getElementById(\'div_\' + e.id).innerHTML = "<img src=\"system/modules/rad-bootstrap/assets/images/layout-" + value + ".png\" />";}</script><div id="div_ctrl_' . $this->strId . '"><img src="system/modules/rad-bootstrap/assets/images/layout-' . $selectedValue . '.png" /></div>';
-        return $imageContainer . sprintf('<select onchange="bootstrapPreviewChange(this);" name="%s" id="ctrl_%s" class="%s%s"%s onfocus="Backend.getScrollOffset()">%s</select>%s',
+        return  sprintf('<select name="%s" id="ctrl_%s" class="%s%s"%s onfocus="Backend.getScrollOffset()">%s</select>%s',
             $this->strName,
             $this->strId,
             $strClass,

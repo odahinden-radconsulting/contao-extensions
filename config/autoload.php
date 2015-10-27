@@ -22,5 +22,5 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
     // Widgets
-    'Contao\SelectBootstrapMenu'                  => 'system/modules/rad-bootstrap/widgets/SelectBootstrapMenu.php'
+    'Contao\SelectBootstrapMenu'                  => 'system/modules/contao-extensions-bootstrap/widgets/SelectBootstrapMenu.php'
 ));

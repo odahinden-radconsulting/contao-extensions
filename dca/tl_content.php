@@ -6,47 +6,86 @@
  * Time: 1:15 PM
  */
 
-$GLOBALS['TL_DCA']['tl_content']['palettes']['text'] .= ';{bootstrap_legend},bootstrap_chosen_lg,bootstrap_chosen_md,bootstrap_chosen_sm,bootstrap_chosen_xs';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['text'] .= ';{bootstrap_legend},' . tl_content_bootstrap::OFFSET_LG .
+                                                                           ',' . tl_content_bootstrap::COLUMN_LG .
+                                                                           ',' . tl_content_bootstrap::OFFSET_MD .
+                                                                           ',' . tl_content_bootstrap::COLUMN_MD .
+                                                                           ',' . tl_content_bootstrap::OFFSET_SM .
+                                                                           ',' . tl_content_bootstrap::COLUMN_SM .
+                                                                           ',' . tl_content_bootstrap::OFFSET_XS .
+                                                                           ',' . tl_content_bootstrap::COLUMN_XS;
 
 /**
  * Fields
  */
 
 $fields = array(
-    tl_content_bootstrap::DEVICE_LG =>  array(
-        'label'                   => &$GLOBALS['TL_LANG']['tl_content'][tl_content_bootstrap::DEVICE_LG],
+    tl_content_bootstrap::COLUMN_LG =>  array(
+        'label'                   => &$GLOBALS['TL_LANG']['tl_content'][tl_content_bootstrap::COLUMN_LG],
         'exclude'                 => true,
         'filter'                  => true,
         'inputType'               => 'selectbootstrap',
         'options_callback'        => array('tl_content_bootstrap', 'getDevicesOptions'),
-        'eval'                    => array('submitOnChange'=>true),
         'sql'                     => "varchar(255) NOT NULL default ''"
     ),
-    tl_content_bootstrap::DEVICE_MD =>  array(
-        'label'                   => &$GLOBALS['TL_LANG']['tl_content'][tl_content_bootstrap::DEVICE_MD],
+    tl_content_bootstrap::COLUMN_MD =>  array(
+        'label'                   => &$GLOBALS['TL_LANG']['tl_content'][tl_content_bootstrap::COLUMN_MD],
         'exclude'                 => true,
         'filter'                  => true,
         'inputType'               => 'selectbootstrap',
         'options_callback'        => array('tl_content_bootstrap', 'getDevicesOptions'),
-        'eval'                    => array('chosen'=>true, 'submitOnChange'=>true),
         'sql'                     => "varchar(255) NOT NULL default ''"
     ),
-    tl_content_bootstrap::DEVICE_SM =>  array(
-        'label'                   => &$GLOBALS['TL_LANG']['tl_content'][tl_content_bootstrap::DEVICE_SM],
+    tl_content_bootstrap::COLUMN_SM =>  array(
+        'label'                   => &$GLOBALS['TL_LANG']['tl_content'][tl_content_bootstrap::COLUMN_SM],
         'exclude'                 => true,
         'filter'                  => true,
         'inputType'               => 'selectbootstrap',
         'options_callback'        => array('tl_content_bootstrap', 'getDevicesOptions'),
-        'eval'                    => array('chosen'=>true, 'submitOnChange'=>true),
         'sql'                     => "varchar(255) NOT NULL default ''"
     ),
-    tl_content_bootstrap::DEVICE_XS =>  array(
-        'label'                   => &$GLOBALS['TL_LANG']['tl_content'][tl_content_bootstrap::DEVICE_XS],
+    tl_content_bootstrap::COLUMN_XS =>  array(
+        'label'                   => &$GLOBALS['TL_LANG']['tl_content'][tl_content_bootstrap::COLUMN_XS],
         'exclude'                 => true,
         'filter'                  => true,
         'inputType'               => 'selectbootstrap',
         'options_callback'        => array('tl_content_bootstrap', 'getDevicesOptions'),
-        'eval'                    => array('chosen'=>true, 'submitOnChange'=>true),
+        'sql'                     => "varchar(255) NOT NULL default ''"
+    ),
+    tl_content_bootstrap::OFFSET_LG =>  array(
+        'label'                   => &$GLOBALS['TL_LANG']['tl_content'][tl_content_bootstrap::OFFSET_LG],
+        'exclude'                 => true,
+        'filter'                  => true,
+        'inputType'               => 'select',
+        'eval'                    => array('tl_class' => 'w50 bootstrap-offset'),
+        'options_callback'        => array('tl_content_bootstrap', 'getOffsetOptions'),
+        'sql'                     => "varchar(255) NOT NULL default ''"
+    ),
+    tl_content_bootstrap::OFFSET_MD =>  array(
+        'label'                   => &$GLOBALS['TL_LANG']['tl_content'][tl_content_bootstrap::OFFSET_MD],
+        'exclude'                 => true,
+        'filter'                  => true,
+        'inputType'               => 'select',
+        'eval'                    => array('tl_class' => 'w50 bootstrap-offset'),
+        'options_callback'        => array('tl_content_bootstrap', 'getOffsetOptions'),
+        'sql'                     => "varchar(255) NOT NULL default ''"
+    ),
+    tl_content_bootstrap::OFFSET_SM =>  array(
+        'label'                   => &$GLOBALS['TL_LANG']['tl_content'][tl_content_bootstrap::OFFSET_SM],
+        'exclude'                 => true,
+        'filter'                  => true,
+        'inputType'               => 'select',
+        'eval'                    => array('tl_class' => 'w50 bootstrap-offset'),
+        'options_callback'        => array('tl_content_bootstrap', 'getOffsetOptions'),
+        'sql'                     => "varchar(255) NOT NULL default ''"
+    ),
+    tl_content_bootstrap::OFFSET_XS =>  array(
+        'label'                   => &$GLOBALS['TL_LANG']['tl_content'][tl_content_bootstrap::OFFSET_XS],
+        'exclude'                 => true,
+        'filter'                  => true,
+        'inputType'               => 'select',
+        'eval'                    => array('tl_class' => 'w50 bootstrap-offset'),
+        'options_callback'        => array('tl_content_bootstrap', 'getOffsetOptions'),
         'sql'                     => "varchar(255) NOT NULL default ''"
     )
 );
@@ -63,12 +102,29 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge($GLOBALS['TL_DCA']['tl_
  */
 class tl_content_bootstrap extends Backend
 {
-    const DEVICE_LG = 'bootstrap_chosen_lg';
-    const DEVICE_MD = 'bootstrap_chosen_md';
-    const DEVICE_SM = 'bootstrap_chosen_sm';
-    const DEVICE_XS = 'bootstrap_chosen_xs';
+    const COLUMN_LG = 'bootstrap_column_lg';
+    const COLUMN_MD = 'bootstrap_column_md';
+    const COLUMN_SM = 'bootstrap_column_sm';
+    const COLUMN_XS = 'bootstrap_column_xs';
 
+    const OFFSET_LG = 'bootstrap_offset_lg';
+    const OFFSET_MD = 'bootstrap_offset_md';
+    const OFFSET_SM = 'bootstrap_offset_sm';
+    const OFFSET_XS = 'bootstrap_offset_xs';
+
+    /**
+     * @param DataContainer $dc
+     * @return string
+     */
     public function getDevicesOptions(DataContainer $dc){
         return $GLOBALS['TL_LANG']['tl_content']['columns'];
+    }
+
+    /**
+     * @param Datacontainer $dc
+     * @return string
+     */
+    public function getOffsetOptions(Datacontainer $dc){
+        return $GLOBALS['TL_LANG']['tl_content']['offset'];
     }
 }
