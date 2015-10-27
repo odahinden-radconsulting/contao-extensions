@@ -16,8 +16,10 @@
     background-color: #ccc;
     border-radius: 5px;
     padding: 5px 15px;
-    transition: margin .3s ease-in-out;
-    -webkit-transition: margin .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
 }
 
 .css-device {
