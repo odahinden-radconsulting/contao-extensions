@@ -11,7 +11,7 @@ jQuery.noConflict();
         defaultText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
         dataElements: [],
         interactiveElements: '',
-        columnClass: 'col-12 col-11 col-10 col-9 col-8 col-7 col-6 col-5 col-4 col-3 col-2 col-1',
+        columnClass: 'col-12 col-11 col-10 col-9 col-8 col-7 col-6 col-5 col-4 col-3 col-2 col-1 col-0',
         offsetClass: 'offset-11 offset-10 offset-9 offset-8 offset-7 offset-6 offset-5 offset-4 offset-3 offset-2 offset-1 offset-0'
     };
 
