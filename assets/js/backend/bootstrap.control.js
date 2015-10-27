@@ -125,7 +125,7 @@ jQuery.noConflict();
             });
 
             request.done(function(data){
-                var d = $('<html/>').html(data);
+                var d = $('<div/>').html(data);
                 self.append(d);
             });
         });
