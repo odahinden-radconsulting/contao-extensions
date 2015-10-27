@@ -110,8 +110,12 @@ jQuery.noConflict();
     }
 
     $.fn.backendWidget = function(options) {
+
+        var token = $('input[name="REQUEST_TOKEN"]').val();
         var request = $.ajax({
-            url: 'system/modules/contao-extensions-bootstrap/assets/html/backend.bootstrap.container.html'
+            url: 'system/modules/contao-extensions-bootstrap/assets/html/backend.bootstrap.container.html',
+            data: {REQUEST_TOKEN: token},
+            method: 'GET'
         });
 
         request.done(function(data){
