@@ -112,18 +112,19 @@ jQuery.noConflict();
     $.fn.backendWidget = function(options) {
 
         var token = $('input[name="REQUEST_TOKEN"]').val();
-        var request = $.ajax({
-            url: 'system/modules/contao-extensions-bootstrap/assets/html/backend.bootstrap.container.html',
-            data: {REQUEST_TOKEN: token},
-            method: 'GET'
-        });
 
-        request.done(function(data){
-            console.log(data);
-        });
 
         return $.each(this, function() {
+            var size = $(this).attr('id').replace('pal_bootstrap_legend_', '');
+            var request = $.ajax({
+                url: 'system/modules/contao-extensions-bootstrap/assets/html/backend.bootstrap.container.' + size + '.html',
+                data: {REQUEST_TOKEN: token},
+                method: 'GET'
+            });
 
+            request.done(function(data){
+                console.log(data);
+            });
         });
     };
 })(jQuery);
