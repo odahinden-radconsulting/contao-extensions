@@ -62,7 +62,7 @@ jQuery.noConflict();
             var self = this;
             var container = $(self).closest('.tl_box');
             var size = $(this).val();
-            $.setClasses(container, size, $.bootstrap.columnClass);
+            $.setClasses(container, size, $.bootstrap.columnClass, 'col-');
 
             $(this).on({
                 change: function(e) {
@@ -77,7 +77,7 @@ jQuery.noConflict();
             var self = this;
             var container = $(self).closest('.tl_box');
             var size = $(this).val();
-            $.setClasses(container, size, $.bootstrap.offsetClass);
+            $.setClasses(container, size, $.bootstrap.offsetClass, 'offset-');
 
             $(this).on({
                 change: function(e) {
