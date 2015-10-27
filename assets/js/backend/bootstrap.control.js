@@ -104,10 +104,18 @@ jQuery.noConflict();
         return $.each(this, function() {
             switch ($(this).getTagName()) {
                 case 'input':
+                    if ('' ==  $(this).val()) {
+                        return '';
+                    }
+
                     $.bootstrap.dataElements.push('<h3>' + $(this).val() + '</h3>');
                     break;
 
                 case 'textarea':
+                    if ('' ==  $(this).text()) {
+                        return '';
+                    }
+
                     $.bootstrap.dataElements.push($(this).text());
                     break;
             }
@@ -126,8 +134,6 @@ jQuery.noConflict();
     $.fn.insertContent = function() {
         $('#ctrl_headline, #ctrl_text').dataCollector();
         var html = $.buildHtml();
-        console.log('yeah');
-        console.log($(this));
         $(this).find('.bootstrap-col').html(html);
     }
 
