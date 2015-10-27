@@ -4,7 +4,11 @@
     margin: 10px 0;
     box-sizing: border-box;
     clear:both;
-    height: 200px;
+    min-height: 480px;
+}
+
+.bootstrap-flow-container.xs {
+    height: 426px;
 }
 
 .bootstrap-col {
