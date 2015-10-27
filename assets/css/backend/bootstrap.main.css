@@ -65,6 +65,7 @@
 }
 .col-0 {
     width: 0%;
+    opacity: 0;
 }
 
 .offset-11 {
@@ -102,5 +103,4 @@
 }
 .offset-0 {
     margin-left: 0%;
-    opacity: 0;
 }
