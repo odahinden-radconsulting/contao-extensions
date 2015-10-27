@@ -88,6 +88,7 @@ jQuery.noConflict();
     };
 
     $.setClasses = function(container, size, classes, type) {
+        console.log("test");
         container.find('.bootstrap-col').removeClass(classes).addClass(type + size);
     };
 
