@@ -20,6 +20,10 @@
     -webkit-transition: margin .3s ease-in-out;
 }
 
+.css-device {
+    margin: 15px auto 15px auto;
+}
+
 .col-12 {
     width: 100%;
 }
