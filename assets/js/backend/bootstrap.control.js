@@ -110,6 +110,7 @@ jQuery.noConflict();
     }
 
     $.fn.backendWidget = function(options) {
+        console.log('hello');
         return $.each(this, function() {
             console.log("test");
         });
@@ -120,5 +121,5 @@ jQuery(document).ready(function($){
     /*$('select.bootstrap-select').bsSelector();
     $('.bootstrap-offset select').bsOffset();*/
 
-    $('fieldset[id="pal_bootstrap_legend_*"]').backendWidget(['']);
+    $('fieldset[id*="pal_bootstrap_legend_"]').backendWidget(['']);
 });
