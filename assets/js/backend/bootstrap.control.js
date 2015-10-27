@@ -61,9 +61,12 @@ jQuery.noConflict();
         return $.each(this, function() {
             var self = this;
             var container = $(self).closest('.tl_box');
+            var size = $(this).val();
+            $.setClasses(container, size, $.bootstrap.columnClass);
+
             $(this).on({
                 change: function(e) {
-                    container.find('.bootstrap-col').removeClass($.bootstrap.columnClass).addClass('col-' + $(this).val());
+                    $.setClasses(container, $(this).val(), $.bootstrap.columnClass);
                 }
             });
         });
@@ -73,12 +76,19 @@ jQuery.noConflict();
         return $.each(this, function() {
             var self = this;
             var container = $(self).closest('.tl_box');
+            var size = $(this).val();
+            $.setClasses(container, size, $.bootstrap.offsetClass);
+
             $(this).on({
                 change: function(e) {
-                    container.find('.bootstrap-col').removeClass($.bootstrap.offsetClass).addClass('offset-' + $(this).val());
+                    $.setClasses(container, $(this).val(), $.bootstrap.offsetClass);
                 }
             });
         });
+    };
+
+    $.setClasses = function(container, size, classes) {
+        container.find('.bootstrap-col').removeClass(classes).addClass('offset-' + size);
     };
 
     $.fn.backendWidget = function(options) {
