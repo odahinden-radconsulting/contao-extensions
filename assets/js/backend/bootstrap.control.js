@@ -110,9 +110,16 @@ jQuery.noConflict();
     }
 
     $.fn.backendWidget = function(options) {
-        console.log('hello');
+        var request = $.ajax({
+            url: 'system/modules/contao-extensions-bootstrap/assets/html/backend.bootstrap.container.html'
+        });
+
+        request.done(function(data){
+            console.log(data);
+        });
+
         return $.each(this, function() {
-            console.log("test");
+
         });
     };
 })(jQuery);
