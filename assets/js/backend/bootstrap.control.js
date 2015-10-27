@@ -108,9 +108,17 @@ jQuery.noConflict();
 
         });
     }
+
+    $.fn.backendWidget = function(options) {
+        return $.each(this, function() {
+            console.log("test");
+        });
+    };
 })(jQuery);
 
 jQuery(document).ready(function($){
-    $('select.bootstrap-select').bsSelector();
-    $('.bootstrap-offset select').bsOffset();
+    /*$('select.bootstrap-select').bsSelector();
+    $('.bootstrap-offset select').bsOffset();*/
+
+    $('fieldset[id="pal_bootstrap_legend_*"]').backendWidget(['']);
 });
