@@ -115,6 +115,8 @@ jQuery.noConflict();
 
 
         return $.each(this, function() {
+
+            var self = $(this);
             var size = $(this).attr('id').replace('pal_bootstrap_legend_', '');
             var request = $.ajax({
                 url: 'system/modules/contao-extensions-bootstrap/assets/html/backend.bootstrap.container.' + size + '.html',
@@ -123,7 +125,8 @@ jQuery.noConflict();
             });
 
             request.done(function(data){
-                console.log(data);
+                var d = $('<html/>').html(data);
+                self.append(d);
             });
         });
     };
