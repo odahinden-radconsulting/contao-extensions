@@ -121,5 +121,5 @@ jQuery(document).ready(function($){
     /*$('select.bootstrap-select').bsSelector();
     $('.bootstrap-offset select').bsOffset();*/
 
-    $('fieldset[id*="pal_bootstrap_legend_"]').backendWidget(['']);
+    $('[id*="pal_bootstrap_legend_"]').backendWidget(['']);
 });
