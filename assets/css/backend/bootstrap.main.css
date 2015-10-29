@@ -28,6 +28,12 @@
     margin: 15px auto 15px auto;
 }
 
+.col-center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .col-12 {
     width: 100%;
 }
