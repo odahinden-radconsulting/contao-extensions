@@ -109,5 +109,5 @@
     margin-left: 8.33333333%;
 }
 .offset-0 {
-    margin-left: 0%;
+    margin-left: inherit;
 }
