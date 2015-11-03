@@ -26,7 +26,6 @@ $GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_md'] = 'Bootstrap Columns fo
 $GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_sm'] = 'Bootstrap Columns for small Devices such as Tablets';
 $GLOBALS['TL_LANG']['tl_content']['bootstrap_legend_xs'] = 'Bootstrap Columns for extra small Devices such as Mobilephones';
 
-$GLOBALS['TL_LANG']['tl_content']['columns']['center-block'] = 'Center Block';
 $GLOBALS['TL_LANG']['tl_content']['columns'][12] = '12 Columns';
 $GLOBALS['TL_LANG']['tl_content']['columns'][11] = '11 Columns';
 $GLOBALS['TL_LANG']['tl_content']['columns'][10] = '10 Columns';
